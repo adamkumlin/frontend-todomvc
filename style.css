@@ -20,43 +20,86 @@ a {
     text-decoration: none;
 }
 
+#form {
+    margin-right: 3.4rem;
+}
+
+#select-all {
+    appearance: none;
+    position: relative;
+    left: 54px;
+    bottom: 3px;
+    color: #4d4d4d;
+    padding: 1.5rem 1rem;
+}
+
+#select-all:checked {
+    color: black;
+}
+
+#select-all::before {
+    content: "🔽";
+}
+
 #search {
     padding: 16px 16px 16px 60px;
     border: none;
     box-shadow: -1px 1px 20px 0px rgb(0 0 0 / 13%);
     font-size: 24px;
     height: 65px;
-    width: 550px;
+    width: 33rem;
     outline: 0;
+    font-style: italic;
 }
 
 #search:focus,
-#todo-controls ul li a:focus {
+#todo-controls ul li a:focus,
+#select-all:focus, main div:active {
     box-shadow: 0 0 2px 2px #CF7D7D;
 }
 
 main {
-    display: flex;
-    place-content: center;
-    flex-direction: column;
-}
-
-#todos {
     text-align: left;
     margin: 1px auto 0 auto;
-    width: 550px;
+    width: 33rem;
     font-size: 24px;
     border-bottom: 1px solid #ededed;
     background-color: white;
     box-shadow: -1px 1px 20px 0px rgb(0 0 0 / 13%);
 }
 
-#todos div {
+main div {
     padding: 1rem;
 }
 
-#todos div label {
+main div label {
     margin-left: 1rem;
+}
+
+main div label.completed {
+    text-decoration: line-through;
+}
+
+main div input {
+    appearance: none;
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid black;
+    border-radius: 50px;
+    transform: translateY(0.5rem);
+}
+
+main div input:checked {
+    border-color: lime;
+}
+
+main div input:checked::before{
+    content: "✓";
+    color: lime;
+    position: absolute;
+    font-size: 20px;
+    left: 8px;
+    bottom: 1px;
 }
 
 #todo-controls {
@@ -65,7 +108,7 @@ main {
 
 #todo-controls.shown {
     display: block;
-    width: 550px;
+    width: 33rem;
     margin-right: auto;
     margin-left: auto;
     justify-content: center;

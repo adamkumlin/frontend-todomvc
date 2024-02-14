@@ -10,7 +10,6 @@ form.addEventListener("submit", (e) => {
 });
 
 function addTodo(todo) {
-  const todos = document.getElementById("todos");
   const todoContainer = document.createElement("div");
 
   const todoInput = document.createElement("input");
@@ -28,5 +27,5 @@ function addTodo(todo) {
     }
   }
   todoContainer.append(todoInput, todoLabel);
-  todos.append(todoContainer);
+  main.append(todoContainer);
 }
