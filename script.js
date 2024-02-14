@@ -10,13 +10,15 @@ form.addEventListener("submit", (e) => {
 });
 
 function addTodo(todo) {
-  const todoLabel = document.createElement("label");
-  todoLabel.textContent = todo;
+  const todos = document.getElementById("todos");
+  const todoContainer = document.createElement("div");
 
   const todoInput = document.createElement("input");
   todoInput.type = "checkbox";
   todoInput.checked = false;
-  todoInput.id = "nam";
+
+  const todoLabel = document.createElement("label");
+  todoLabel.textContent = todo;
 
   todoInput.onchange = () => {
     if (todoInput.checked) {
@@ -25,6 +27,6 @@ function addTodo(todo) {
         todoInput.classList.remove("checked")
     }
   }
-  todoLabel.append(todoInput);
-  main.append(todoLabel);
+  todoContainer.append(todoInput, todoLabel);
+  todos.append(todoContainer);
 }
