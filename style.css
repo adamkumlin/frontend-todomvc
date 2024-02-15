@@ -105,9 +105,9 @@ main div input:checked::before{
 #remove {
     border: none;
     background: none;
-    position: relative;
-    right: 3px;
+    position: absolute;
 }
+
 #todo-controls {
     display: none;
 }
