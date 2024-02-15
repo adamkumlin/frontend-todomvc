@@ -21,14 +21,13 @@ a {
 }
 
 #form {
-    margin-right: 3.4rem;
+    display: flex;
+    place-content: center;
 }
 
 #select-all {
     appearance: none;
-    position: relative;
-    left: 54px;
-    bottom: 3px;
+    position: absolute;
     color: #4d4d4d;
     padding: 1.5rem 1rem;
 }
@@ -70,6 +69,7 @@ main {
 
 main div {
     padding: 1rem;
+    margin-top: 2px;
 }
 
 main div label {
@@ -102,6 +102,12 @@ main div input:checked::before{
     bottom: 1px;
 }
 
+#remove {
+    border: none;
+    background: none;
+    position: relative;
+    right: 3px;
+}
 #todo-controls {
     display: none;
 }
@@ -162,4 +168,8 @@ footer p {
 
 footer p a {
     color: #4d4d4d;
+}
+
+@media screen and (max-width: 650px) {
+
 }
