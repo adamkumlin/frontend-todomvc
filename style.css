@@ -21,14 +21,13 @@ a {
 }
 
 #form {
-    margin-right: 3.4rem;
+    display: flex;
+    place-content: center;
 }
 
 #select-all {
     appearance: none;
-    position: relative;
-    left: 54px;
-    bottom: 3px;
+    position: absolute;
     color: #4d4d4d;
     padding: 1.5rem 1rem;
 }
@@ -70,6 +69,7 @@ main {
 
 main div {
     padding: 1rem;
+    margin-top: 2px;
 }
 
 main div label {
@@ -100,6 +100,12 @@ main div input:checked::before{
     font-size: 20px;
     left: 8px;
     bottom: 1px;
+}
+
+#remove {
+    border: none;
+    background: none;
+    position: absolute;
 }
 
 #todo-controls {
@@ -136,18 +142,6 @@ main div input:checked::before{
 #todo-controls ul li.active,
 #todo-controls ul li:hover {
     border: 1px solid #CE4646;
-}
-
-#todo-controls::after {
-    display: block;
-    content: '';
-    height: 20px;
-    overflow: hidden;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2),
-        0 8px 0 -3px #f6f6f6,
-        0 9px 1px -3px rgba(0, 0, 0, 0.2),
-        0 16px 0 -6px #f6f6f6,
-        0 17px 2px -6px rgba(0, 0, 0, 0.2);
 }
 
 footer {
