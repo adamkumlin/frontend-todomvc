@@ -3,13 +3,13 @@ export function addTodo(todo) {
     // one "todo" post in the application 
     const todoContainer = document.createElement("div");
     
-    const todoLabel = document.createElement("label");
-    todoLabel.textContent = todo;
-    
     const todoInput = document.createElement("input");
     todoInput.type = "checkbox";
     todoInput.checked = false;
     todoInput.classList.add("unchecked");
+
+    const todoLabel = document.createElement("label");
+    todoLabel.textContent = todo;
     
     // toggle a task as complete/incomplete
     todoInput.onchange = () => {
@@ -22,7 +22,11 @@ export function addTodo(todo) {
         }
     }
     
-    todoContainer.append(todoInput, todoLabel);
+    // delete button for an individual todo
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "❌";
+
+    todoContainer.append(todoInput, todoLabel, deleteButton);
 
     const main = document.getElementById("main");
     main.append(todoContainer);
