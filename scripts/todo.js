@@ -25,7 +25,10 @@ export function addTodo(todo) {
     // delete button for an individual todo
     const deleteButton = document.createElement("button");
     deleteButton.textContent = "❌";
-
+    deleteButton.addEventListener("click", () => {
+        todoContainer.remove();
+    });
+    
     todoContainer.append(todoInput, todoLabel, deleteButton);
 
     const main = document.getElementById("main");
