@@ -108,9 +108,12 @@ main div input:checked::before{
     position: absolute;
 }
 
+/*
+commented out for testing purposes 
 #todo-controls {
     display: none;
 }
+*/
 
 #todo-controls.shown {
     display: block;
