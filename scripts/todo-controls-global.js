@@ -1,4 +1,5 @@
 import { filterTodos } from "./todo-controls-filter.js";
+import { clearCompletedTodosFromList } from "./todo-controls-clear-completed.js";
 
 export function drawGlobalTodoControls() {
     // if todo controls exist when this method is called, remove them
@@ -57,7 +58,12 @@ export function drawGlobalTodoControls() {
         const completedTodos = document.querySelectorAll("body main .checked");
         if (completedTodos.length > 0) {
             const clearCompletedTodos = document.createElement("li");
-            clearCompletedTodos.textContent = "Clear completed";
+            const clearCompletedTodosButton = document.createElement("button");
+            clearCompletedTodosButton.textContent = "Clear completed";
+            clearCompletedTodosButton.addEventListener("click", () => {
+                clearCompletedTodosFromList();
+            });
+            clearCompletedTodos.append(clearCompletedTodosButton);
             todoControlsList.append(clearCompletedTodos);
         }
 
