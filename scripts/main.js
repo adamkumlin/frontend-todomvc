@@ -1,5 +1,5 @@
 import { addTodo } from "./todo.js";
-import { drawGlobalTodoControls } from "./todo-global-controls.js";
+import { drawGlobalTodoControls } from "./todo-controls-global.js";
 
 const form = document.getElementById("form");
 
