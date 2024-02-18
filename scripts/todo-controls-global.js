@@ -55,7 +55,7 @@ export function drawGlobalTodoControls() {
         todoControlsList.append(todoCompleted);
 
         // add "Clear completed" button, if there are any todos marked as complete
-        const completedTodos = document.querySelectorAll("body main .checked");
+        const completedTodos = document.querySelectorAll("body main .checked-container");
         if (completedTodos.length > 0) {
             const clearCompletedTodos = document.createElement("li");
             const clearCompletedTodosButton = document.createElement("button");

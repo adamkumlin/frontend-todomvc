@@ -5,8 +5,8 @@ export function filterTodos(showActiveTodos) {
     // if undefined show all
 
     const main = document.getElementById("main");
-    const activeTodos = main.getElementsByClassName("unchecked");
-    const completeTodos = main.getElementsByClassName("checked");
+    const activeTodos = main.getElementsByClassName("unchecked-container");
+    const completeTodos = main.getElementsByClassName("checked-container");
 
     if (showActiveTodos === true) {
         for (let i = 0; i < activeTodos.length; i++) {
