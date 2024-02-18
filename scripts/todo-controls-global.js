@@ -1,3 +1,5 @@
+import { filterTodos } from "./todo-controls-filter.js";
+
 export function drawGlobalTodoControls() {
     // if todo controls exist when this method is called, remove them
     // (this is done so that we can call this method easier from
@@ -25,20 +27,29 @@ export function drawGlobalTodoControls() {
         const todoAll = document.createElement("li");
         const todoAllButton = document.createElement("button");
         todoAllButton.textContent = "All";
+        todoAllButton.addEventListener("click", () => {
+            filterTodos(); // undefined shows all todos
+        });
         todoAll.append(todoAllButton);
         todoControlsList.append(todoAll);
-
+        
         // show active/not done todos button/filter
         const todoActive = document.createElement("li");
         const todoActiveButton = document.createElement("button");
         todoActiveButton.textContent = "Active";
+        todoActiveButton.addEventListener("click", () => {
+            filterTodos(true); // true shows all active todos
+        });
         todoActive.append(todoActiveButton);
         todoControlsList.append(todoActive);
-
+        
         // show completed/done button/filter
         const todoCompleted = document.createElement("li");
         const todoCompletedButton = document.createElement("button");
         todoCompletedButton.textContent = "Completed";
+        todoCompletedButton.addEventListener("click", () => {
+            filterTodos(false); // false shows all completed todos
+        });
         todoCompleted.append(todoCompletedButton);
         todoControlsList.append(todoCompleted);
 
