@@ -10,14 +10,15 @@ export function drawGlobalTodoControls() {
     // only draw controls if there are any existing todos in main
     const existingTodos = document.querySelectorAll("main div");
     if (existingTodos.length > 0) {
-        const nrOfIncompleteTodosLeft = document.querySelectorAll("main div .unchecked").length;
-
         const todoControlsContainer = document.createElement("div");
         todoControlsContainer.id = "todo-controls";
-
+        
+        // nr of incomplete items left 
         const todoItemsLeft = document.createElement("p");
+        const nrOfIncompleteTodosLeft = document.querySelectorAll("main div .unchecked").length;
         todoItemsLeft.textContent = nrOfIncompleteTodosLeft + " items left";
 
+        // list for all the buttons below
         const todoControlsList = document.createElement("ul");
 
         // show all button/filter
