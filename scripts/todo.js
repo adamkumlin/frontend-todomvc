@@ -4,7 +4,8 @@ export function addTodo(todo) {
     // this function adds a div holding everything related to 
     // one "todo" post in the application 
     const todoContainer = document.createElement("div");
-    
+    todoContainer.classList.add("unchecked");
+
     const todoInput = document.createElement("input");
     todoInput.type = "checkbox";
     todoInput.checked = false;
@@ -16,10 +17,14 @@ export function addTodo(todo) {
     // toggle a task as complete/incomplete
     todoInput.onchange = () => {
         if (todoInput.checked) {
+            todoContainer.classList.remove("unchecked");
             todoInput.classList.remove("unchecked");
+            todoContainer.classList.add("checked");
             todoInput.classList.add("checked");
         } else {
+            todoContainer.classList.remove("checked");
             todoInput.classList.remove("checked");
+            todoContainer.classList.add("unchecked");
             todoInput.classList.add("unchecked");
         }
         // redraw global controls
