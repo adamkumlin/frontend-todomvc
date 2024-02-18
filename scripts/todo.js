@@ -1,3 +1,5 @@
+import { drawGlobalTodoControls } from "./todo-controls-global.js";
+
 export function addTodo(todo) {
     // this function adds a div holding everything related to 
     // one "todo" post in the application 
@@ -20,6 +22,8 @@ export function addTodo(todo) {
             todoInput.classList.remove("checked");
             todoInput.classList.add("unchecked");
         }
+        // redraw global controls
+        drawGlobalTodoControls();
     }
     
     // delete button for an individual todo
@@ -27,6 +31,8 @@ export function addTodo(todo) {
     deleteButton.textContent = "❌";
     deleteButton.addEventListener("click", () => {
         todoContainer.remove();
+        // redraw global controls
+        drawGlobalTodoControls();
     });
     
     todoContainer.append(todoInput, todoLabel, deleteButton);
