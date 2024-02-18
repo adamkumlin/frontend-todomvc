@@ -1,4 +1,5 @@
 import { addTodo } from "./todo.js";
+import { drawGlobalTodoControls } from "./todo-controls-global.js";
 
 const form = document.getElementById("form");
 
@@ -10,4 +11,7 @@ form.addEventListener("submit", (e) => {
     addTodo(term.value);
     term.value = "";
   }
+
+  // add todo controls 
+  drawGlobalTodoControls();
 });

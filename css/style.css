@@ -108,9 +108,18 @@ main div input:checked::before{
     position: absolute;
 }
 
+/* hides todos in the list when user filters with
+    all/active/completed buttons in controls */
+.hidden-todo {
+    display: none;
+}
+
+/*
+commented out for testing purposes 
 #todo-controls {
     display: none;
 }
+*/
 
 #todo-controls.shown {
     display: block;
