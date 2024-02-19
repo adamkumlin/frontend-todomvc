@@ -6,6 +6,8 @@ export function addTodo(todo) {
     const todoContainer = document.createElement("div");
     todoContainer.classList.add("unchecked-container");
 
+    const todoInputContainer = document.createElement("div");
+
     const todoInput = document.createElement("input");
     todoInput.type = "checkbox";
     todoInput.checked = false;
@@ -40,7 +42,8 @@ export function addTodo(todo) {
         drawGlobalTodoControls();
     });
     
-    todoContainer.append(todoInput, todoLabel, deleteButton);
+    todoInputContainer.append(todoInput, todoLabel);
+    todoContainer.append(todoInputContainer, deleteButton);
 
     const main = document.getElementById("main");
     main.append(todoContainer);
