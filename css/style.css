@@ -8,6 +8,7 @@ body {
     text-align: center;
     background-color: #f5f5f5;
     font-weight: 300;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 h1 {
@@ -51,14 +52,19 @@ a {
     font-style: italic;
 }
 
+#search::placeholder {
+    color: #b6b6b6;
+    font-weight: 100;
+}
+
 #search:focus,
-#todo-controls ul li a:focus,
-#select-all:focus, main div:active {
+#select-all:focus,
+.unchecked-container:active,
+.checked-container:active {
     box-shadow: 0 0 2px 2px #CF7D7D;
 }
 
 main {
-    text-align: left;
     margin: 1px auto 0 auto;
     width: 33rem;
     font-size: 24px;
@@ -67,20 +73,34 @@ main {
     box-shadow: -1px 1px 20px 0px rgb(0 0 0 / 13%);
 }
 
-main div {
-    padding: 1rem;
-    margin-top: 2px;
+main div button {
+    border: none;
+    background: none;
+    display: none;
 }
 
-main div label {
+main div:hover>button {
+    display: block;
+}
+
+.unchecked-container,
+.checked-container {
+    padding: 1rem;
+    margin-top: 2px;
+    display: flex;
+    justify-content: space-between;
+}
+
+main div div label {
     margin-left: 1rem;
 }
 
-main div label.completed {
+.checked-container div label {
     text-decoration: line-through;
+    color: #949494;
 }
 
-main div input {
+main div div input {
     appearance: none;
     width: 2rem;
     height: 2rem;
@@ -89,11 +109,11 @@ main div input {
     transform: translateY(0.5rem);
 }
 
-main div input:checked {
+main div div input:checked {
     border-color: lime;
 }
 
-main div input:checked::before{
+main div div input:checked::before {
     content: "✓";
     color: lime;
     position: absolute;
@@ -102,11 +122,6 @@ main div input:checked::before{
     bottom: 1px;
 }
 
-#remove {
-    border: none;
-    background: none;
-    position: absolute;
-}
 
 /* hides todos in the list when user filters with
     all/active/completed buttons in controls */
@@ -121,35 +136,46 @@ commented out for testing purposes
 }
 */
 
-#todo-controls.shown {
-    display: block;
+#todo-controls {
+    display: flex;
     width: 33rem;
     margin-right: auto;
     margin-left: auto;
-    justify-content: center;
-    text-align: left;
     padding: 1rem 0;
     font-size: 15px;
     background-color: white;
 }
 
-#todo-controls ul {
-    display: inline;
-    list-style-type: none;
-    margin-left: 10rem;
+#todo-controls span {
+    margin-left: 1rem;
 }
+
+#todo-controls ul {
+    list-style-type: none;
+    margin-left: 5rem;
+}
+
 
 #todo-controls ul li {
     display: inline-block;
-    margin: 0 1rem;
+    margin: 0 3px;
 }
 
-#todo-controls ul li a {
-    color: rgb(17, 17, 17)
+#todo-controls ul li button {
+    color: rgb(17, 17, 17);
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    padding: 3px 7px;
 }
 
-#todo-controls ul li.active,
-#todo-controls ul li:hover {
+#todo-controls ul li:nth-child(4) button {
+    margin-left: 4rem;
+}
+
+#todo-controls ul li button .active,
+#todo-controls ul li button:hover {
     border: 1px solid #CE4646;
 }
 
@@ -165,4 +191,16 @@ footer p {
 
 footer p a {
     color: #4d4d4d;
+}
+
+@media screen and (max-width: 550px) {
+
+    main,
+    #todo-controls {
+        width: 100vw;
+    }
+
+    #todo-controls span, #todo-controls ul li {
+        margin: 0;
+    }
 }

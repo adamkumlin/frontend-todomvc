@@ -17,7 +17,7 @@ export function drawGlobalTodoControls() {
         todoControlsContainer.id = "todo-controls";
         
         // nr of incomplete items left 
-        const todoItemsLeft = document.createElement("p");
+        const todoItemsLeft = document.createElement("span");
         const nrOfIncompleteTodosLeft = document.querySelectorAll("main div .unchecked").length;
         todoItemsLeft.textContent = nrOfIncompleteTodosLeft + " items left";
 
