@@ -36,7 +36,7 @@ test("two items left", async ({ page }) => {
   await todoInput.press("Enter");
 
   //const addPeanutsToggle = page.getByText("Buy peanuts");
-  const todoToggle = page.locator("main div:first-child div input");
+  const todoToggle = page.locator(".unchecked").nth(1);
   todoToggle.click();
 
   await expect(page.getByText("2 items left")).toBeVisible();
