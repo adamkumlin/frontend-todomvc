@@ -11,6 +11,9 @@ form.addEventListener("submit", (e) => {
   if (term.value !== "") { // to prevent empty todos in the list 
     addTodo(term.value);
     term.value = "";
+
+    // show toggle state of all button if list has values
+    document.getElementById("select-all").classList.remove("hidden");
   }
 
   // add todo controls 

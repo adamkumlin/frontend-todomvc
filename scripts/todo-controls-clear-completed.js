@@ -12,5 +12,8 @@ export function clearCompletedTodosFromList() {
     if (todosLeftInList.length === 0) {
         const todoControlsInDOM = document.getElementById("todo-controls");
         todoControlsInDOM.remove();
+
+        // hide toggle state of all button if list has values
+        document.getElementById("select-all").classList.add("hidden");
     }
 }

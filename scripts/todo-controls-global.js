@@ -72,4 +72,7 @@ export function drawGlobalTodoControls() {
         const main = document.querySelector("body main");
         main.insertAdjacentElement("afterend", todoControlsContainer);
     }
+    else { // this else statement is a cheap solution to hide the toggle state of all todos button
+        document.getElementById("select-all").classList.add("hidden");
+    }
 }
