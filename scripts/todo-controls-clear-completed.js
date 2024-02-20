@@ -7,4 +7,10 @@ export function clearCompletedTodosFromList() {
             todosMarkedAsComplete[i].remove();
         }
     }
+
+    const todosLeftInList = document.querySelectorAll("body main div");
+    if (todosLeftInList.length === 0) {
+        const todoControlsInDOM = document.getElementById("todo-controls");
+        todoControlsInDOM.remove();
+    }
 }
