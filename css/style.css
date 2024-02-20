@@ -41,7 +41,7 @@ a {
     content: "🔽";
 }
 
-#search {
+#todo-textbox {
     padding: 16px 16px 16px 60px;
     border: none;
     box-shadow: -1px 1px 20px 0px rgb(0 0 0 / 13%);
@@ -52,12 +52,12 @@ a {
     font-style: italic;
 }
 
-#search::placeholder {
+#todo-textbox::placeholder {
     color: #b6b6b6;
     font-weight: 100;
 }
 
-#search:focus,
+#todo-textbox:focus,
 #select-all:focus,
 .unchecked-container:active,
 .checked-container:active {
