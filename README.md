@@ -1,4 +1,4 @@
-# Inlämningsuppgift 3: TodoMVC
+# TodoMVC-klon
 Vår egen version av [den kända exempelappen TodoMVC](https://todomvc.com/examples/backbone/dist/), skapad med HTML, CSS och JavaScript.
 
 ## Funktionalitet
